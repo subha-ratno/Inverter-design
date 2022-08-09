@@ -1,0 +1,7 @@
+workspace loadfrom -path .
+cell open -design {Resistive Load Inverter} -cell Cell2 -type schematic -newwindow
+window move -left 192 -top 192 -width 1185 -height 533 -undock -max 
+window fit -x0 -3403 -y0 -1699 -x1 3966 -y1 2153 -units iu
+workspace dockinglayout load -file dockinglayout.xml
+source open.design -relativeto user -encoding utf-8
+source open.design -relativeto design -encoding utf-8
