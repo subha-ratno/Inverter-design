@@ -1,0 +1,42 @@
+* SPICE export by:  S-Edit 16.30
+* Export time:      Tue Aug 09 18:21:00 2022
+* Design:           Resistive Load Inverter
+* Cell:             Cell0
+* Interface:        view0
+* View:             view0
+* View type:        connectivity
+* Export as:        top-level cell
+* Export mode:      hierarchical
+* Exclude empty cells: yes
+* Exclude .model:   no
+* Exclude .end:     no
+* Exclude simulator commands:     no
+* Expand paths:     yes
+* Wrap lines:       no
+* Root path:        C:\Users\SUBHA RATNO\Documents\Tanner EDA\Resistive Load Inverter
+* Exclude global pins:   no
+* Exclude instance locations: no
+* Control property name(s): SPICE
+
+********* Simulation Settings - General Section *********
+.lib "D:/Tanner EDA/Tanner Tools v16.3/libraries/mosfetdegerleri.txt"
+
+********* Simulation Settings - Parameters *********
+.param Vin = 5
+***** Top Level *****
+RR1 Vdd N_1  R=10k $ $x=15 $y=400 $w=150 $h=600 $r=90
+MNMOS_1 N_1 N_2 Gnd 0 NMOS W=500n L=250n AS=2.25p PS=6.8u AD=2.25p PD=6.8u $ $x=-200 $y=-400 $w=400 $h=600
+VVdd Vdd Gnd  DC 5 $ $x=-1400 $y=-100 $w=400 $h=600
+VVin N_2 Gnd  DC Vin $ $x=-700 $y=-800 $w=400 $h=600
+.PRINT DC V(N_1) $ $x=1750 $y=-150 $w=1500 $h=300
+.PRINT DC V(N_2) $ $x=350 $y=1550 $w=1500 $h=300
+
+********* Simulation Settings - Analysis Section *********
+.op
+.tran 0.1n 100n
+.dc lin Vin 0 5 0.01
+
+********* Simulation Settings - Additional SPICE Commands *********
+
+.end
+
